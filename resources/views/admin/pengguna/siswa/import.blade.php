@@ -1,76 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta charset="utf-8" />
-        <title>Import Akun Siswa - Admin</title>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>Import Akun Siswa - Admin</title>
 
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-        @include('admin/loadcss')
-    </head>
-
-    <body class="no-skin">
-        @include('admin/header')
-
-        <div class="main-container ace-save-state" id="main-container">
-            <script type="text/javascript">
-                try{ace.settings.loadState('main-container')}catch(e){}
-            </script>
-
-            @include('admin/sidebar')
-
-            <div class="main-content">
-                <div class="main-content-inner">
-                    <div class="breadcrumbs ace-save-state" id="breadcrumbs">
-                        <ul class="breadcrumb">
-                            <li>
-                                <i class="ace-icon fa fa-home home-icon"></i>
-                                <a href="{{route('adminhome')}}">Home</a>
-                            </li>
-                            <li>
-                                <a href="#">Pengguna</a>
-                            </li>
-                            <li>
-                                <a href="{{route('list.siswa')}}">Siswa</a>
-                            </li>
-                        </ul><!-- /.breadcrumb -->
-                    </div>
-
-                    <div class="page-content">
-                        <div class="page-header">
-                            <h4>
-                                Import Akun Siswa
-                            </h4>
-                            
-                        </div><!-- /.page-header -->
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <!-- PAGE CONTENT BEGINS -->
-                                @yield('content')
-                                <form action="{{ URL::to('/admin/akun/siswa/importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">  
-                                    {{ csrf_field() }}
-                                    <input type="file" name="import_file" />  
-                                    <br>
-                                    <button class="btn-sm btn-primary">Import</button>  
-                                </form> 
-                                <!-- PAGE CONTENT ENDS -->
-                            </div><!-- /.col -->
-                        </div><!-- /.row -->
-                    </div><!-- /.page-content -->
-                </div>
-            </div><!-- /.main-content -->
-
-            @include('admin/footer')
-
-            <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-                <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
-            </a>
-        </div><!-- /.main-container -->
-
-        @include('admin/loadjs')
-
-        <!-- inline scripts related to this page -->
-    </body>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		@include('admin/loadcss')
+	</head>
+	<body class="hold-transition sidebar-mini layout-fixed">
+	<div class="wrapper">
+		
+		@include('admin/header')
+		@include('admin/sidebar')
+		<div class="content-wrapper">
+			<div class="content-header">
+			    <div class="container-fluid">
+			        <div class="row mb-2">
+			            <div class="col-sm-6">
+			                <h5 class="m-0">Import Akun Siswa</h5>
+			            </div>
+			            <!-- /.col -->
+			            <div class="col-sm-6">
+			                <ol class="breadcrumb float-sm-right">
+			                    <li class="breadcrumb-item"><a href="{{route('adminhome')}}">Home</a></li>
+			                    <li class="breadcrumb-item"><a href="{{route('list.siswa')}}">Siswa</a></li>
+			                    <li class="breadcrumb-item active">Import Akun Siswa</li>
+			                </ol>
+			            </div>
+			            <!-- /.col -->
+			        </div>
+			        <!-- /.row -->
+			    </div>
+			    <!-- /.container-fluid -->
+			</div>
+			<section class="content">
+			    <div class="container-fluid">
+			        <div class="row">
+			            <div class="col-12">
+			                <div class="card">
+			                    <div class="card-header">
+			                        <h3 class="card-title">Import Akun Siswa</h3>
+			                    </div>
+			                    <div class="card-body">
+			                    	<div class="row">
+                                		<div class="col-sm-5">
+                                			<!-- PAGE CONTENT BEGINS -->
+			                                @yield('content')
+			                                <form action="{{ URL::to('/admin/akun/siswa/importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+			                                    {{ csrf_field() }}
+			                                    <div class="form-group">
+			                                    	<input type="file" name="import_file" />
+			                                    </div>
+												<div class="form-group">
+													<button class="btn btn-sm btn-success"><i class="fas fa-save"></i> Import File</button>
+												</div>
+			                                </form> 
+                                		</div>
+                                	</div>
+                                </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</section>
+		<!-- PAGE CONTENT ENDS -->
+		</div>
+	</div>
+	@include('admin/loadjs')
+	</body>
 </html>
-

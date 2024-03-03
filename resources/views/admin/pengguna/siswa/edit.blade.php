@@ -7,103 +7,75 @@
 
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-
 		@include('admin/loadcss')
-
-		<!-- inline styles related to this page -->
-
-		
 	</head>
-
-	<body class="no-skin">
+	<body class="hold-transition sidebar-mini layout-fixed">
+	<div class="wrapper">
+		
 		@include('admin/header')
-
-		<div class="main-container ace-save-state" id="main-container">
-			<script type="text/javascript">
-				try{ace.settings.loadState('main-container')}catch(e){}
-			</script>
-
-			@include('admin/sidebar')
-
-			<div class="main-content">
-				<div class="main-content-inner">
-					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
-						<ul class="breadcrumb">
-							<li>
-								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="{{route('adminhome')}}">Home</a>
-							</li>
-							<li>
-                                <a href="#">Pengguna</a>
-                            </li>
-                            <li>
-								<a href="{{route('list.siswa')}}">Siswa</a>
-							</li>
-						</ul><!-- /.breadcrumb -->
-					</div>
-
-					<div class="page-content">
-						<div class="page-header">
-							<h4>
-								Edit Data Akun Siswa
-							</h4>
-						</div><!-- /.page-header -->
-						<div class="row">
-							<div class="col-xs-12">
-								<!-- PAGE CONTENT BEGINS -->
-								@yield('content')
-								@foreach($siswa as $row)
-								<form action="{{route('ubah.siswa', $row->id)}}" method="post" class="form-horizontal" role="form" >
-									{{ csrf_field() }}
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right"> Nama </label>
-
-										<div class="col-sm-9">
-											<input type="text" id="nama" name="nama" value="{{ $row->nama }}" class="col-xs-10 col-sm-5" />
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right"> Username </label>
-
-										<div class="col-sm-9">
-											<input type="text" id="username" name="username" value="{{ $row->username }}" class="col-xs-10 col-sm-5" />
-										</div>
-									</div>
-									<div class="clearfix form-actions">
-										<div class="col-md-offset-3 col-md-9">
-											<button class="btn btn-primary" type="submit">
-												<i class="ace-icon fa fa-check bigger-110"></i>
-												Submit
-											</button>
-
-											&nbsp; &nbsp; &nbsp;
-											<button class="btn" type="reset">
-												<i class="ace-icon fa fa-undo bigger-110"></i>
-												<a onclick="return confirm('Perubahan anda belum disimpan. Tetap tinggalkan halaman ini ?')" href="{{('/admin/home')}}"> Cancel</a>
-											</button>
-										</div>
-									</div>
-								</form>
-								@endforeach
-								<!-- PAGE CONTENT ENDS -->
-							</div><!-- /.col -->
-						</div><!-- /.row -->
-					</div><!-- /.page-content -->
-				</div>
-			</div><!-- /.main-content -->
-
-			@include('admin/footer')
-
-			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
-			</a>
-		</div><!-- /.main-container -->
-
-		@include('admin/loadjs')
-
-		<!-- inline scripts related to this page -->
-		<script type="text/javascript">
-			
-		</script>
+		@include('admin/sidebar')
+		<div class="content-wrapper">
+			<div class="content-header">
+			    <div class="container-fluid">
+			        <div class="row mb-2">
+			            <div class="col-sm-6">
+			                <h5 class="m-0">Edit Akun Siswa</h5>
+			            </div>
+			            <!-- /.col -->
+			            <div class="col-sm-6">
+			                <ol class="breadcrumb float-sm-right">
+			                    <li class="breadcrumb-item"><a href="{{route('adminhome')}}">Home</a></li>
+			                    <li class="breadcrumb-item"><a href="{{route('list.siswa')}}">Siswa</a></li>
+			                    <li class="breadcrumb-item active">Edit Akun Siswa</li>
+			                </ol>
+			            </div>
+			            <!-- /.col -->
+			        </div>
+			        <!-- /.row -->
+			    </div>
+			    <!-- /.container-fluid -->
+			</div>
+			<section class="content">
+			    <div class="container-fluid">
+			        <div class="row">
+			            <div class="col-12">
+			                <div class="card">
+			                    <div class="card-header">
+			                        <h3 class="card-title">Edit Akun Siswa</h3>
+			                    </div>
+			                    <div class="card-body">
+			                    	<div class="row">
+                                		<div class="col-sm-5">
+                                			@yield('content')
+											@foreach($siswa as $data)
+											<form action="{{ route('ubah.siswa', $data->id) }}" method="post" class="form-horizontal" role="form" >
+												{{ csrf_field() }}
+												<div class="form-group">
+												    <label>Nama</label>
+												    <input type="text" class="form-control" id="nama" name="nama" value="{{ $data->nama }}" placeholder="Input Nama" />
+												</div>
+												<div class="form-group">
+												    <label>Username</label>
+												    <input type="text" class="form-control" id="username" name="username" value="{{ $data->username }}" placeholder="Input Nama" />
+												</div>
+												<div class="form-group">
+													<button type="submit" class="btn btn-sm btn-success"><i class="fas fa-save"></i> Simpan</button>
+													<a onclick="return confirm('Perubahan anda belum disimpan. Tetap tinggalkan halaman ini ?')" href="{{ route('list.siswa') }}" class="btn btn-sm btn-secondary"><i class="fas fa-undo"></i> Cancel</a>
+													
+												</div>
+											</form>
+											@endforeach
+                                		</div>
+                                	</div>
+                                </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</section>
+		<!-- PAGE CONTENT ENDS -->
+		</div>
+	</div>
+	@include('admin/loadjs')
 	</body>
 </html>
