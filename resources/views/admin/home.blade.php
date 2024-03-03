@@ -9,49 +9,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 		@include('admin/loadcss')
 	</head>
-
-	<body class="no-skin">
+	<body class="hold-transition sidebar-mini layout-fixed">
+	<div class="wrapper">
+		
 		@include('admin/header')
-
-		<div class="main-container ace-save-state" id="main-container">
-			<script type="text/javascript">
-				try{ace.settings.loadState('main-container')}catch(e){}
-			</script>
-
-			@include('admin/sidebar')
-
-			<div class="main-content">
-				<div class="main-content-inner">
-					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
-						<ul class="breadcrumb">
-							<li>
-								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="{{route('adminhome')}}">Home</a>
-							</li>
-						</ul><!-- /.breadcrumb -->
-					</div>
-
-					<div class="page-content">
-						<div class="row">
-							<div class="col-xs-12">
-								<!-- PAGE CONTENT BEGINS -->
-								@yield('content')
-								<!-- PAGE CONTENT ENDS -->
-							</div><!-- /.col -->
-						</div><!-- /.row -->
-					</div><!-- /.page-content -->
-				</div>
-			</div><!-- /.main-content -->
-
-			@include('admin/footer')
-
-			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
-			</a>
-		</div><!-- /.main-container -->
-
-		@include('admin/loadjs')
-
-		<!-- inline scripts related to this page -->
+		@include('admin/sidebar')
+		<div class="content-wrapper">
+		<!-- PAGE CONTENT BEGINS -->
+		@yield('content')
+		<!-- PAGE CONTENT ENDS -->
+		</div>
+	</div>
+	@include('admin/loadjs')
 	</body>
 </html>

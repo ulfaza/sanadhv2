@@ -1,36 +1,28 @@
-		<!-- bootstrap & fontawesome -->
-		<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
-		<link rel="stylesheet" href="{{ asset('assets/font-awesome/4.5.0/css/font-awesome.min.css') }}" />
-
-		<!-- page specific plugin styles -->
-		<link rel="stylesheet" href="{{ asset('assets/css/bootstrap-duallistbox.min.css') }}" />
-		<link rel="stylesheet" href="{{ asset('assets/css/bootstrap-multiselect.min.css') }}" />
-		<link rel="stylesheet" href="{{ asset('assets/css/select2.min.css') }}" />
-		
-		<!-- text fonts -->
-		<link rel="stylesheet" href="{{ asset('assets/css/fonts.googleapis.com.css') }}" />
-
-		<!-- ace styles -->
-		<link rel="stylesheet" href="{{ asset('assets/css/ace.min.css') }}" class="ace-main-stylesheet" id="main-ace-style" />
-
-		<!--[if lte IE 9]>
-			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
-		<![endif]-->
-		<link rel="stylesheet" href="{{ asset('assets/css/ace-skins.min.css')}}" />
-		<link rel="stylesheet" href="{{ asset('assets/css/ace-rtl.min.css')}}" />
-
-		<!--[if lte IE 9]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
-		<![endif]-->
-
-		
-
-		<!-- ace settings handler -->
-		<script src="{{ asset('assets/js/ace-extra.min.js') }}"></script>
-
-		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
-
-		<!--[if lte IE 8]>
-		<script src="assets/js/html5shiv.min.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/fontawesome-free/css/all.min.css') }}">
+<!-- Ionicons -->
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- Tempusdominus Bootstrap 4 -->
+<link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+<!-- iCheck -->
+<link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+<!-- JQVMap -->
+<link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/jqvmap/jqvmap.min.css') }}">
+<!-- Theme style -->
+<link rel="stylesheet" href="{{ asset('assets/adminlte/dist/css/adminlte.min.css') }}">
+<!-- overlayScrollbars -->
+<link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+<!-- Daterange picker -->
+<link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/daterangepicker/daterangepicker.css') }}">
+<!-- summernote -->
+<link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/summernote/summernote-bs4.min.css') }}">
+<!-- DataTables -->
+<link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+<!-- Select2 -->
+<link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/select2/css/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+<!-- Bootstrap4 Duallistbox -->
+<link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css') }}">

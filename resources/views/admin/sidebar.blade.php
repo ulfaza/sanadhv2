@@ -1,238 +1,203 @@
-      <div id="sidebar" class="sidebar                  responsive                    ace-save-state">
-        <script type="text/javascript">
-          try{ace.settings.loadState('sidebar')}catch(e){}
-        </script>
+<style type="text/css">
+	.nav-item .active {
+		background: #8bb07f !important;
+	}
+</style>
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="background: #084808;">
+    <!-- Brand Logo -->
+    <a href="{{route('adminhome')}}" class="brand-link text-center">
+        <span class="brand-text font-weight-light">SANADH</span>
+    </a>
 
-        <ul class="nav nav-list">
-          <li class="">
-            <a href="{{route('adminhome')}}">
-              <i class="menu-icon fa fa-tachometer"></i>
-              <span class="menu-text"> Dashboard </span>
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="">
-            <a href="#" class="dropdown-toggle">
-              <i class="menu-icon fa fa-users"></i>
-              <span class="menu-text">
-                Pengguna
-              </span>
-
-              <b class="arrow fa fa-angle-down"></b>
-            </a>
-
-            <b class="arrow"></b>
-
-            <ul class="submenu">
-              <li class="">
-                <a href="{{route('list.guru')}}">
-                  <i class="menu-icon fa fa-caret-right"></i>
-                  Guru
-                </a>
-
-                <b class="arrow"></b>
-              </li>
-
-              <li class="">
-                <a href="{{route('list.siswa')}}">
-                  <i class="menu-icon fa fa-caret-right"></i>
-
-                  Siswa
-                </a>
-
-                <b class="arrow"></b>
-
-              </li>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                <li class="nav-item">
+                    <a href="{{ route('adminhome') }}" class="nav-link {{ request()->routeIs('adminhome') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>
+                <!-- 
+            	<a href="#" class="nav-link {{ request()->routeIs('list.guru') || request()->routeIs('list.siswa') ? 'active' : '' }}">-->
+                <li class="nav-item">
+				    <a href="#" class="nav-link">
+				        <i class="nav-icon fas fa-users"></i>
+				        <p>
+				            Pengguna
+				            <i class="fas fa-angle-left right"></i>
+				        </p>
+				    </a>
+				    <ul class="nav nav-treeview">
+				        <li class="nav-item">
+				            <a href="{{route('list.guru')}}" class="nav-link">
+				                <i class="far fa-circle nav-icon"></i>
+				                <p>Guru</p>
+				            </a>
+				        </li>
+				        <li class="nav-item">
+				            <a href="{{route('list.siswa')}}" class="nav-link">
+				                <i class="far fa-circle nav-icon"></i>
+				                <p>Siswa</p>
+				            </a>
+				        </li>
+				    </ul>
+				</li>
+                <li class="nav-item">
+                    <a href="{{route('kelas')}}" class="nav-link">
+                        <i class="nav-icon fas fa-laptop"></i>
+                        <p>
+                            Kelas
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+				    <a href="#" class="nav-link">
+				        <i class="nav-icon fas fa-book"></i>
+				        <p>
+				            KH
+				            <i class="fas fa-angle-left right"></i>
+				        </p>
+				    </a>
+				    <ul class="nav nav-treeview">
+				        <li class="nav-item">
+				            <a href="{{ route('kh') }}" class="nav-link">
+				                <i class="far fa-circle nav-icon"></i>
+				                <p>Jenis KH</p>
+				            </a>
+				        </li>
+				    </ul>
+				</li>
+                <li class="nav-item">
+                    <a href="{{ route('ujian.dzikrul') }}" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            Ujian Dzikrul
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('index.rekappaper') }}" class="nav-link">
+                        <i class="nav-icon fas fa-file-archive"></i>
+                        <p>
+                            Rekap Paper
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('index.rapor') }}" class="nav-link">
+                        <i class="nav-icon fas fa-file-pdf"></i>
+                        <p>
+                            Rekap Ambil Raport
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('th_ajar') }}" class="nav-link">
+                        <i class="nav-icon far fa-calendar-alt"></i>
+                        <p>
+                            Tahun Ajaran
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+				    <a href="#" class="nav-link">
+				        <i class="nav-icon fas fa-copy"></i>
+				        <p>
+				            Tanggungan Ijazah
+				            <i class="fas fa-angle-left right"></i>
+				        </p>
+				    </a>
+				    <ul class="nav nav-treeview">
+				        <li class="nav-item">
+				            <a href="{{ route('index.ijazah') }}" class="nav-link">
+				                <i class="far fa-circle nav-icon"></i>
+				                <p>Ketuntasan</p>
+				            </a>
+				        </li>
+				    </ul>
+				    <ul class="nav nav-treeview">
+				        <li class="nav-item">
+				            <a href="{{ route('index.keu') }}" class="nav-link">
+				                <i class="far fa-circle nav-icon"></i>
+				                <p>Keuangan</p>
+				            </a>
+				        </li>
+				    </ul>
+				    <ul class="nav nav-treeview">
+				        <li class="nav-item">
+				            <a href="{{ route('index.dz') }}" class="nav-link">
+				                <i class="far fa-circle nav-icon"></i>
+				                <p>Dzikrul Ghofilin</p>
+				            </a>
+				        </li>
+				    </ul>
+				    <ul class="nav nav-treeview">
+				        <li class="nav-item">
+				            <a href="{{ route('index.paper') }}" class="nav-link">
+				                <i class="far fa-circle nav-icon"></i>
+				                <p>Paper</p>
+				            </a>
+				        </li>
+				    </ul>
+				    <ul class="nav nav-treeview">
+				        <li class="nav-item">
+				            <a href="{{ route('index.pondok') }}" class="nav-link">
+				                <i class="far fa-circle nav-icon"></i>
+				                <p>Pondok</p>
+				            </a>
+				        </li>
+				    </ul>
+				    <ul class="nav nav-treeview">
+				        <li class="nav-item">
+				            <a href="{{ route('index.aman') }}" class="nav-link">
+				                <i class="far fa-circle nav-icon"></i>
+				                <p>Keamanan PA</p>
+				            </a>
+				        </li>
+				    </ul>
+				    <ul class="nav nav-treeview">
+				        <li class="nav-item">
+				            <a href="{{ route('index.perpus') }}" class="nav-link">
+				                <i class="far fa-circle nav-icon"></i>
+				                <p>Perpus</p>
+				            </a>
+				        </li>
+				    </ul>
+				    <ul class="nav nav-treeview">
+				        <li class="nav-item">
+				            <a href="{{ route('index.asesmen') }}" class="nav-link">
+				                <i class="far fa-circle nav-icon"></i>
+				                <p>Asesmen</p>
+				            </a>
+				        </li>
+				    </ul>
+				</li>
+                <li class="nav-item">
+                    <a href="{{ route('index.kelas12') }}" class="nav-link">
+                        <i class="nav-icon fas fa-calendar-alt"></i>
+                        <p>
+                            Data Kelas 12
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">
+                        <i class="nav-icon fas fa-sign-out-alt"></i>
+                        <p>
+                            Logout
+                        </p>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+	                    {{ csrf_field() }}
+	                </form>
+                </li>
             </ul>
-          </li>
-
-          <li class="">
-            <a href="{{route('kelas')}}">
-              <i class="menu-icon fa fa-laptop"></i>
-              <span class="menu-text"> Kelas </span>
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="">
-            <a href="#" class="dropdown-toggle">
-              <i class="menu-icon fa fa-book"></i>
-              <span class="menu-text"> KH </span>
-
-              <b class="arrow fa fa-angle-down"></b>
-            </a>
-
-            <b class="arrow"></b>
-
-            <ul class="submenu">
-              <li class="">
-                <a href="{{ route('kh') }}">
-                  <i class="menu-icon fa fa-caret-right"></i>
-                  Jenis KH
-                </a>
-
-                <b class="arrow"></b>
-              </li>           
-            </ul>
-
-            <!-- <ul class="submenu">
-              <li class="">
-                <a href="{{ route('transkrip') }}">
-                  <i class="menu-icon fa fa-caret-right"></i>
-                  Transkrip KH
-                </a>
-
-                <b class="arrow"></b>
-              </li>           
-            </ul> -->
-          </li>
-
-          <li class="">
-            <a href="{{ route('ujian.dzikrul') }}">
-              <i class="menu-icon fa fa-book"></i>
-              <span class="menu-text"> Ujian Dzikrul </span>
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-          
-          <li class="">
-            <a href="{{ route('index.rekappaper') }}">
-              <i class="menu-icon fa fa-file-archive-o"></i>
-              <span class="menu-text"> Rekap Paper </span>
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="">
-            <a href="{{ route('index.rapor') }}">
-              <i class="menu-icon fa fa-file-pdf-o"></i>
-              <span class="menu-text"> Rekap Ambil Rapor</span>
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="">
-            <a href="{{ route('th_ajar') }}">
-              <i class="menu-icon fa fa-calendar"></i>
-              <span class="menu-text"> Tahun Ajaran </span>
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <li class="">
-            <a href="#" class="dropdown-toggle">
-              <i class="menu-icon fa fa-file-text"></i>
-              <span class="menu-text">
-                Tanggungan Ijazah
-              </span>
-
-              <b class="arrow fa fa-angle-down"></b>
-            </a>
-
-            <b class="arrow"></b>
-
-            <ul class="submenu">
-              <li class="">
-                <a href="{{ route('index.ijazah') }}">
-                  <i class="menu-icon fa fa-caret-right"></i>
-                  Ketuntasan
-                </a>
-
-                <b class="arrow"></b>
-              </li>
-
-              <li class="">
-                <a href="{{ route('index.keu') }}">
-                  <i class="menu-icon fa fa-caret-right"></i>
-                  Keuangan
-                </a>
-
-                <b class="arrow"></b>
-              </li>
-
-              <li class="">
-                <a href="{{ route('index.dz') }}">
-                  <i class="menu-icon fa fa-caret-right"></i>
-                  Dzikrul Ghofilin
-                </a>
-
-                <b class="arrow"></b>
-              </li>
-
-              <li class="">
-                <a href="{{ route('index.paper') }}">
-                  <i class="menu-icon fa fa-caret-right"></i>
-                  Paper
-                </a>
-
-                <b class="arrow"></b>
-              </li>
-
-              <li class="">
-                <a href="{{ route('index.pondok') }}">
-                  <i class="menu-icon fa fa-caret-right"></i>
-                  Pondok
-                </a>
-
-                <b class="arrow"></b>
-              </li>
-
-              <li class="">
-                <a href="{{ route('index.aman') }}">
-                  <i class="menu-icon fa fa-caret-right"></i>
-                  Keamanan PA
-                </a>
-
-                <b class="arrow"></b>
-              </li>
-
-              <li class="">
-                <a href="{{ route('index.perpus') }}">
-                  <i class="menu-icon fa fa-caret-right"></i>
-                  Perpus
-                </a>
-
-                <b class="arrow"></b>
-              </li>
-
-              <li class="">
-                <a href="{{ route('index.asesmen') }}">
-                  <i class="menu-icon fa fa-caret-right"></i>
-                  Asesmen
-                </a>
-
-                <b class="arrow"></b>
-              </li>
-            </ul>
-          </li>
-
-          <li class="">
-            <a href="{{ route('index.kelas12') }}">
-              <i class="menu-icon fa fa-calendar"></i>
-              <span class="menu-text"> Data Kelas 12 </span>
-            </a>
-
-            <b class="arrow"></b>
-          </li>
-
-          <!-- <li class="">
-            <a href="#">
-              <i class="menu-icon fa  fa-envelope"></i>
-              <span class="menu-text"> Perizinan </span>
-            </a>
-
-            <b class="arrow"></b>
-          </li> -->
-        </ul><!-- /.nav-list -->
-
-        <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-          <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-        </div>
-      </div>
+        </nav>
+    </div>
+</aside>
