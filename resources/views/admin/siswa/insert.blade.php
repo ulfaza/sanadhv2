@@ -64,8 +64,8 @@
 													<input type="text" id="nisn" name="nisn" class="form-control" />
 												</div>
 												<div class="form-group">
-													<label>NISN</label>
-													<input type="text" id="s_name" name="s_name" class="form-control" />
+													<label>Nama</label>
+													<input type="text" id="s_nama" name="s_nama" class="form-control" />
 												</div>
 												<div class="form-group">
 													<label>Status</label>

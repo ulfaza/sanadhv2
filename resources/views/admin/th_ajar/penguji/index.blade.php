@@ -64,7 +64,7 @@
                                 		<div class="col-sm-12">
                                 			<div class="table-responsive" >
 												<!-- PAGE CONTENT BEGINS -->
-												@yield('content')sm
+												@yield('content')
 												{{ csrf_field() }}
 												<div class="table-responsive">
 										            <table id="datatable" class="table table-bordered table-striped">

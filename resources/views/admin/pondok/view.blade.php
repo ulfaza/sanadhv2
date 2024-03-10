@@ -43,7 +43,7 @@
 			                    <div class="card-header">
 			                        <h3 class="card-title">Tanggungan Pondok {{ $th_lulus }}</h3>
 			                        <div class="float-right">
-			                        	<a \href="{{route('import.pondok', $th_lulus)}}" class="btn btn-sm btn-success"><i class="fas fa-file-excel"></i> Import Tanggungan</a>
+			                        	<a href="{{route('import.pondok', $th_lulus)}}" class="btn btn-sm btn-success"><i class="fas fa-file-excel"></i> Import Tanggungan</a>
 			                        </div>
 			                    </div>
 			                    <!-- /.card-header -->

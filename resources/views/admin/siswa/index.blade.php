@@ -70,8 +70,8 @@
 									                  <th width="10%">NIS</th>
 									                  <th width="10%">NISN</th>
 									                  <th width="35%">Nama Siswa</th>
-									                  <th width="20%">Status</th>
-									                  <th width="15%">Action</th>
+									                  <th width="15%">Status</th>
+									                  <th width="20%">Action</th>
 									                </tr>
 									              </thead>
 									              <tbody>

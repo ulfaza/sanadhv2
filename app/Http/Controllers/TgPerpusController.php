@@ -98,24 +98,24 @@ class TgPerpusController extends Controller
             if ($row->jenis_kel == "PUTRA") {
                 if (($row->tg_keuangan == "LUNAS") && ($row->tg_pondok == "TUNTAS") && ($row->tg_aman_pa == "TUNTAS") && ($row->tg_dzikrul == "TUNTAS") && ($row->tg_paper == "TUNTAS") && ($row->tg_perpus == "TUNTAS") && ($row->tg_ujian == "TUNTAS")) {
                     DB::table('m_siswa')->where('s_id',$s_id)->update([
-                        'ketuntasan'        => "TUNTAS"
+                        'ketuntasan_ijazah'        => "TUNTAS"
                     ]);
                 }
                 else{
                     DB::table('m_siswa')->where('s_id',$s_id)->update([
-                        'ketuntasan'        => "TIDAK TUNTAS"
+                        'ketuntasan_ijazah'        => "TIDAK TUNTAS"
                     ]);
                 }
             }
             else{
                 if (($row->tg_keuangan == "LUNAS") && ($row->tg_pondok == "TUNTAS") && ($row->tg_dzikrul == "TUNTAS") && ($row->tg_paper == "TUNTAS") && ($row->tg_perpus == "TUNTAS") && ($row->tg_ujian == "TUNTAS")) {
                     DB::table('m_siswa')->where('s_id',$s_id)->update([
-                        'ketuntasan'        => "TUNTAS"
+                        'ketuntasan_ijazah'        => "TUNTAS"
                     ]);
                 }
                 else{
                     DB::table('m_siswa')->where('s_id',$s_id)->update([
-                        'ketuntasan'        => "TIDAK TUNTAS"
+                        'ketuntasan_ijazah'        => "TIDAK TUNTAS"
                     ]);
                 }
             }
@@ -151,24 +151,24 @@ class TgPerpusController extends Controller
                         if ($row->jenis_kel == "PUTRA") {
                             if (($row->tg_keuangan == "LUNAS") && ($row->tg_pondok == "TUNTAS") && ($row->tg_aman_pa == "TUNTAS") && ($row->tg_dzikrul == "TUNTAS") && ($row->tg_paper == "TUNTAS") && ($row->tg_perpus == "TUNTAS") && ($row->tg_ujian == "TUNTAS")) {
                                 DB::table('m_siswa')->where('s_id',$value->id)->update([
-                                    'ketuntasan'        => "TUNTAS"
+                                    'ketuntasan_ijazah'        => "TUNTAS"
                                 ]);
                             }
                             else{
                                 DB::table('m_siswa')->where('s_id',$value->id)->update([
-                                    'ketuntasan'        => "TIDAK TUNTAS"
+                                    'ketuntasan_ijazah'        => "TIDAK TUNTAS"
                                 ]);
                             }
                         }
                         else{
                             if (($row->tg_keuangan == "LUNAS") && ($row->tg_pondok == "TUNTAS") && ($row->tg_dzikrul == "TUNTAS") && ($row->tg_paper == "TUNTAS") && ($row->tg_perpus == "TUNTAS") && ($row->tg_ujian == "TUNTAS")) {
                                 DB::table('m_siswa')->where('s_id',$value->id)->update([
-                                    'ketuntasan'        => "TUNTAS"
+                                    'ketuntasan_ijazah'        => "TUNTAS"
                                 ]);
                             }
                             else{
                                 DB::table('m_siswa')->where('s_id',$value->id)->update([
-                                    'ketuntasan'        => "TIDAK TUNTAS"
+                                    'ketuntasan_ijazah'        => "TIDAK TUNTAS"
                                 ]);
                             }
                         }

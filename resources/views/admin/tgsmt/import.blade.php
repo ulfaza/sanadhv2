@@ -51,6 +51,7 @@
                                 		<div class="col-sm-5">
                                 			@yield('content')
 			                                <form action="{{ URL::to('/admin/keuangan/semester/importExcel', $ta->ta_id) }}" class="form-horizontal" method="post" enctype="multipart/form-data">  
+			                                	{{ csrf_field() }}
 			                                    <div class="form-group">
 			                                    	<input type="file" name="import_file" />
 			                                    </div>

@@ -91,7 +91,7 @@
 												</div>
 												<div class="form-group">
 													<label>Nama</label>
-													<input class="form-control" type="text" id="username" placeholder="Nama" name="username" value="{{$row->nama}}" readonly="true" />
+													<input class="form-control" type="text" id="nama" placeholder="Nama" name="nama" value="{{$row->nama}}" />
 												</div>
 												<div class="form-group">
 													<button type="submit" class="btn btn-sm btn-primary">Simpan</button>
